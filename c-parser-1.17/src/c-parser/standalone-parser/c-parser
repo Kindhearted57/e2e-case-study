@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+# Copyright 2020, Data61, CSIRO (ABN 41 687 119 230)
+#
+# SPDX-License-Identifier: BSD-2-Clause
+#
+
+# Bash 'strict' mode
+set -euo pipefail
+IFS=$'\n\t'
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+function show_architectures () {
+  (
+    cd "$DIR"
+    ARCHES=
+    shopt -s nullglob
+    for EXE in */c-parser; do
+      ARCHES="$ARCHES ${EXE%/c-parser}"
+    done
+    if [ -z "$ARCHES" ]; then
+      echo "There are no standalone C-parser architectures currently built."
+      echo "Try running 'make' in $DIR"
+    else
+      echo "Available architectures are:$ARCHES"
+      echo "Please supply an architecture name as the first argument."
+    fi
+  )
+  exit 1
+}
+
+if [ $# -eq 0 ]; then
+  show_architectures
+fi
+
+ARCH="$1"; shift
+EXE="$DIR/$ARCH/c-parser"
+
+if [ ! -x "$EXE" ]; then
+    echo "Unknown architecture $ARCH" >&2
+    show_architectures
+fi
+
+exec "$EXE" "$@"
