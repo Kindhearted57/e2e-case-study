@@ -1,0 +1,3 @@
+[submodule "Isabelle"]
+	path = Isabelle
+	url = https://github.com/seL4/isabelle.git
