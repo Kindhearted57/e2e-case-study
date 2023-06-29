@@ -1,8 +1,5 @@
 # e2e-case-study
 
-
-# e2e-case-study
-
 # Dependencies
 
 [C parser document](https://trustworthy.systems/software/TS/c-parser/)
