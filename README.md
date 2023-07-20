@@ -13,3 +13,5 @@ In order to put the parser up, the version of Isabelle and MLton matters, which 
 Possible errors when building [MLton](http://www.mlton.org/SelfCompiling#:~:text=To%20build%20MLton%2C%20run%20make,calls%20mlton%20to%20compile%20itself.)
 
 [seL4 on Docker](https://docs.sel4.systems/projects/dockerfiles/)
+
+When trying to build docker with M1 system, might run into an [error](https://github.com/docker/compose/issues/8449), this can be fixed by editing docker engine configuration and disable `buildkit`
