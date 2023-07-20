@@ -1,3 +1,6 @@
 [submodule "Isabelle"]
 	path = Isabelle
 	url = https://github.com/seL4/isabelle.git
+[submodule "seL4-CAmkES-L4v-dockerfiles"]
+	path = seL4-CAmkES-L4v-dockerfiles
+	url = https://github.com/seL4/seL4-CAmkES-L4v-dockerfiles.git
