@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright 2021, Data61, CSIRO (ABN 41 687 119 230)
+
+     SPDX-License-Identifier: BSD-2-Clause
+-->
+<manifest>
+
+
+<remote name="seL4" fetch="../sel4" />
+<remote name="cmillar" fetch="." />
+<remote fetch="https://github.com/riscv" name="opensbi"/>
+
+<default revision="master" remote="seL4" />
+
+<project name="seL4.git" path="kernel"/>
+<project name="seL4_tools.git" path="tools/seL4">
+    <linkfile src="cmake-tool/init-build.sh" dest="init-build.sh"/>
+    <linkfile src="cmake-tool/griddle" dest="griddle"/>
+</project>
+<project name="sel4runtime.git" path="projects/sel4runtime"/>
+<project name="util_libs.git" path="projects/util_libs"/>
+<project name="sel4-example.git" remote="cmillar" path="projects/sel4-example">
+    <linkfile src="easy-settings.cmake" dest="easy-settings.cmake"/>
+</project>
+<project
+    name="opensbi"
+    remote="opensbi"
+    revision="234ed8e427f4d92903123199f6590d144e0d9351"
+    path="tools/opensbi"
+/>
+
+</manifest>
+
