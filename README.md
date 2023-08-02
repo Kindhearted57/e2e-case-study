@@ -24,3 +24,7 @@ $ cd tutorial
 $ repo init -u https://github.com/seL4/sel4-tutorials-manifest.git
 ```
 
+Setting the proof up:
+
+1) Follow the [instructions](https://github.com/seL4/l4v/blob/master/docs/setup.md) to setup isabelle
+2) Run proof following the [description](https://github.com/seL4/l4v/blob/master/README.md#running-the-proofs)
